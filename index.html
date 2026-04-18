@@ -832,6 +832,27 @@
 
     <!-- Custom JavaScript -->
     <script src="main.js"></script>
-</body>
+    const video = document.getElementById("introVideo");
+    const intro = document.getElementById("intro");
+    const main = document.getElementById("main");
+    
+    function skipIntro() {
+    if (!intro || !main) return;
+    
+    intro.style.display = "none";
+    main.style.opacity = "1";
+    }
+    
+    // 영상 끝나면
+    if (video) {
+    video.onended = skipIntro;
+    }
+    
+    // 무조건 4초 후 강제 이동
+    setTimeout(skipIntro, 4000);
+    
+    });
+    </script>
 
+</body>
 </html>
