@@ -1635,10 +1635,81 @@ section {
     100% { transform: scale(1); }
 }
 
+.video-box {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.video-box iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 340px;
+    border-radius: 12px;
+}
 
 
 
-   
+#intro {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 9999;
+}
+
+#intro video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#main {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-description {
+    text-align: center;
+}
+
+.sale-banner {
+    margin: 30px auto;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+
 
 
 
