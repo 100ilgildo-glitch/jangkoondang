@@ -355,7 +355,7 @@
                 <p class="section-description">아래 정보를 정확히 입력해주세요. 입금 후 24시간 내 이메일로 리포트가 발송됩니다</p>
             </div>
 
-        <form name="saju-form" method="POST" data-netlify="true" class="application-form">
+        <form name="saju-form" method="POST" class="application-form">
             <input type="hidden" name="form-name" value="saju-form">
             
                 <!-- 서비스 선택 -->
@@ -839,7 +839,8 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
     <script>
         emailjs.init("Od3FI2UV3YVSoLVEY");
 
@@ -849,22 +850,31 @@
                 e.preventDefault();
 
                 emailjs.sendForm(
-                    'service_pwn4m47',
-                    'template_e9q1hi7',
+                    'service_3mnkraq',
+                    'template_3uwin9a',
                     this
                 )
+
                     .then(() => {
+
                         alert('상담 신청서가 정상 접수되었습니다.');
+
+                        this.reset();
+
                     })
+
                     .catch((error) => {
+
                         alert('메일 전송 실패');
+
                         console.log(error);
+
                     });
 
             });
-    </script>
 
-    <!-- Custom JavaScript -->
+    </script>
+<!-- Custom JavaScript -->
     <script src="main.js"></script>
 </body>
 </html>
