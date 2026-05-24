@@ -504,13 +504,13 @@
                     <h3 class="form-section-title">
                         <i class="fas fa-user"></i> 첫 번째 분 정보
                     </h3>
-
+                
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="name1">이름 *</label>
                             <input type="text" id="name1" name="name1" required placeholder="홍길동">
                         </div>
-
+                
                         <div class="form-group">
                             <label for="gender1">성별 *</label>
                             <select id="gender1" name="gender1" required>
@@ -519,7 +519,7 @@
                                 <option value="female">여성</option>
                             </select>
                         </div>
-
+                
                         <div class="form-group">
                             <label for="birth_type1">생년월일 종류 *</label>
                             <select id="birth_type1" name="birth_type1" required>
@@ -527,25 +527,17 @@
                                 <option value="lunar">음력</option>
                             </select>
                         </div>
-
+                
                         <div class="form-group">
-                            <label for="birth_date2">생년월일 *</label>
-                        
-                            <input type="text" id="birth_date2" name="birth_date2" placeholder="예: 1988년 08월 15일" style="
-                                    width:100%;
-                                    padding:16px;
-                                    font-size:18px;
-                                    border:1px solid #ccc;
-                                    border-radius:10px;
-                                    box-sizing:border-box;
-                                ">
+                            <label for="birth_date1">생년월일 *</label>
+                            <input type="date" id="birth_date1" name="birth_date1" required>
                         </div>
-
+                
                         <div class="form-group">
-                            <label for="birth_time2">태어난 시간</label>
-                            <input type="text" id="birth_time2" name="birth_time2" placeholder="예: 22시 30분">
+                            <label for="birth_time1">태어난 시간</label>
+                            <input type="t" id="birth_time1" name="birth_time1" placeholder="예: 14:30">
                         </div>
-
+                
                         <div class="form-group checkbox-group">
                             <label class="checkbox-label">
                                 <input type="checkbox" id="time_unknown1" name="time_unknown1">
@@ -554,19 +546,19 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <!-- 2인 정보 (조건부 표시) -->
                 <div class="form-section" id="person2Section" style="display: none;">
                     <h3 class="form-section-title">
                         <i class="fas fa-user"></i> 두 번째 분 정보
                     </h3>
-
+                
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="name2">이름 *</label>
                             <input type="text" id="name2" name="name2" placeholder="김영희">
                         </div>
-
+                
                         <div class="form-group">
                             <label for="gender2">성별 *</label>
                             <select id="gender2" name="gender2">
@@ -575,7 +567,7 @@
                                 <option value="female">여성</option>
                             </select>
                         </div>
-
+                
                         <div class="form-group">
                             <label for="birth_type2">생년월일 종류 *</label>
                             <select id="birth_type2" name="birth_type2">
@@ -583,17 +575,17 @@
                                 <option value="lunar">음력</option>
                             </select>
                         </div>
-
-                         <div class="form-group">
+                
+                        <div class="form-group">
                             <label for="birth_date2">생년월일 *</label>
                             <input type="date" id="birth_date2" name="birth_date2">
                         </div>
-
+                
                         <div class="form-group">
                             <label for="birth_time2">태어난 시간</label>
-                            <input type="time" id="birth_time2" name="birth_time2" placeholder="예: 09:15">
+                            <input type="text" id="birth_time2" name="birth_time2" placeholder="예: 09:15">
                         </div>
-
+                
                         <div class="form-group checkbox-group">
                             <label class="checkbox-label">
                                 <input type="checkbox" id="time_unknown2" name="time_unknown2">
@@ -601,7 +593,7 @@
                             </label>
                         </div>
                     </div>
-                </div>
+                </div> 
 
                 <!-- 연락처 정보 -->
                 <div class="form-section">
@@ -646,6 +638,174 @@
                         <li>입금 확인 및 문의: <strong>010-9486-4936</strong></li>
                     </ul>
                 </div>
+
+                <style>
+                    /* 기본 스타일 */
+                    body {
+                        background-color: #000;
+                        color: #d4af37;
+                        font-family: 'Noto Sans KR', sans-serif;
+                        text-align: center;
+                        padding: 40px;
+                    }
+                
+                    .form-container {
+                        background-color: #111;
+                        border: 1px solid #d4af37;
+                        border-radius: 10px;
+                        padding: 30px;
+                        width: 420px;
+                        margin: 0 auto;
+                    }
+                
+                    label {
+                        display: block;
+                        margin: 10px 0 5px;
+                        color: #d4af37;
+                    }
+                
+                    /* 입력창 기본 + focus 효과 */
+                    input[type="text"],
+                    input[type="email"] {
+                        width: 90%;
+                        padding: 8px;
+                        border: 1px solid #d4af37;
+                        background-color: #000;
+                        color: #d4af37;
+                        border-radius: 5px;
+                        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+                    }
+                
+                    input[type="text"]:focus,
+                    input[type="email"]:focus {
+                        border-color: #ffd700;
+                        /* 밝은 금빛 */
+                        box-shadow: 0 0 8px #ffd700;
+                        /* 빛나는 효과 */
+                        outline: none;
+                    }
+                
+                    /* 개인정보 동의 스크롤 박스 */
+                    .privacy-box {
+                        margin-top: 25px;
+                        background-color: #000;
+                        border: 1px solid #d4af37;
+                        border-radius: 8px;
+                        padding: 18px;
+                        text-align: left;
+                        font-size: 14px;
+                        line-height: 1.6;
+                        height: 160px;
+                        overflow-y: scroll;
+                    }
+                
+                    /* 제출 버튼 + hover/active 효과 */
+                    .submit-btn {
+                        margin-top: 25px;
+                        padding: 10px 20px;
+                        background-color: #d4af37;
+                        color: #000;
+                        font-weight: bold;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        transition: background-color 0.3s ease;
+                    }
+
+                    /* 체크박스 크기 키우기 */
+                    input[type="checkbox"] {
+                        transform: scale(2.0); /* 2.0배 확대 */
+                        margin-right: 15px;     /* 글자와 간격 */
+                        cursor: pointer;       /* 클릭 시 손 모양 포인터 */
+                   
+                    }
+                
+                    .submit-btn:disabled {
+                        background-color: #555;
+                        color: #999;
+                        cursor: not-allowed;
+                    }
+                
+                    .submit-btn:hover:enabled {
+                        background-color: #ffd700;
+                        /* 데스크톱 hover 시 더 밝은 금빛 */
+                    }
+                
+                    .submit-btn:active:enabled {
+                        background-color: #ffe066;
+                        /* 모바일 터치 시 더 밝은 금빛 */
+                    }
+                
+                    /* 📱 모바일 반응형 */
+                    @media (max-width: 600px) {
+                        body {
+                            padding: 20px;
+                            font-size: 16px;
+                        }
+                
+                        .form-container {
+                            width: 100%;
+                            padding: 20px;
+                        }
+                
+                        input[type="text"],
+                        input[type="email"] {
+                            width: 100%;
+                            font-size: 16px;
+                            padding: 12px;
+                        }
+                
+                        .privacy-box {
+                            height: 100px;
+                            font-size: 13px;
+                        }
+                
+                        .submit-btn {
+                            width: 100%;
+                            /* 버튼 전체 폭 */
+                            padding: 15px;
+                            font-size: 18px;
+                        }
+                    }
+                </style>
+                </head>
+                
+                <body>
+            
+                    <div class="privacy-box">
+                                <strong>개인정보 수집 및 이용 동의서</strong><br><br>
+                                1. 상담신청서 작성 시 - 이름, 생년월일시, 성별, 연락처(전화번호, 이메일) 등은 사주상담 특성상 필요정보 자료로 상담의뢰인 동의로 간주합니다.<br><br>
+                                2. 수집된 고객님의 소중한 정보는 상담 목적 외에는 사용하지 않으며, 상담 목적 달성 후 즉시 파기됩니다.<br><br>
+                                3. 개인정보 수집 및 이용에 동의하셔야 상담신청서 제출이 가능합니다. 동의하지 않을 경우 상담신청이 제한됩니다.<br><br>
+                                
+
+                            <div class="privacy-agree-container">
+                                <label class="privacy-agree-label">
+                                    <input type="checkbox" name="privacy_agreement" required>
+                                    <span>위 개인정보 수집 및 이용에 동의합니다.</span>
+                                </label>
+                            </div>
+                
+                        </form>
+                    </div>
+                
+                    <script>
+                        const checkbox = document.getElementById('privacyAgree');
+                        const submitBtn = document.getElementById('submitBtn');
+
+                        checkbox.addEventListener('change', function () {
+                            submitBtn.disabled = !this.checked;
+                        });
+
+                        document.getElementById('consultForm').addEventListener('submit', function (e) {
+                            if (!checkbox.checked) {
+                                e.preventDefault();
+                                alert('개인정보 수집 및 이용에 동의하셔야 상담신청서 제출이 가능합니다.');
+                            }
+                        });
+                    </script>
+                
+                </body>
 
                 <!-- 제출 버튼 -->
                 <div class="form-actions">
@@ -839,41 +999,36 @@
         </div>
     </div>
 
-   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     
     <script>
-        emailjs.init("Od3FI2UV3YVSoLVEY");
+        // 새로고침으로 쟁취하신 진짜 완전체 새 열쇠 세트!
+        emailjs.init({
+            publicKey: "tl5jPJIoiOMEfjMHj",
+            privateKey: "5LauTyg1mz6Vlf6dJzw1h"
+        });
 
         document.querySelector(".application-form")
             .addEventListener("submit", function (e) {
-
                 e.preventDefault();
 
+                // 낙서 꼬리표 없는 진짜 깨끗한 주소로 고정!
                 emailjs.sendForm(
-                    'service_3mnkraq',
-                    'template_3uwin9a',
+                    'service_9oog4dh',  // 원장님의 진짜 서비스 ID
+                    'template_3uwin9a', // 원장님의 진짜 템플릿 ID
                     this
                 )
-
                     .then(() => {
-
-                        alert('상담 신청서가 정상 접수되었습니다.');
-
+                        alert('상담 신청서가 정상 접수되었습니다. 🎉');
                         this.reset();
-
                     })
-
                     .catch((error) => {
-
                         alert('메일 전송 실패');
-
                         console.log(error);
-
                     });
-
             });
-
     </script>
+
 <!-- Custom JavaScript -->
     <script src="main.js"></script>
 </body>
